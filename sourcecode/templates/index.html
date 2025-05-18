@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crypto Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Cryptocurrency Price Predictor</h1>
+    <form action="/predict" method="post">
+        <label>1h % Change:</label><input name="1h" type="number" step="any" required><br>
+        <label>24h % Change:</label><input name="24h" type="number" step="any" required><br>
+        <label>7d % Change:</label><input name="7d" type="number" step="any" required><br>
+        <label>24h Volume:</label><input name="volume" type="number" step="any" required><br>
+        <label>Market Cap:</label><input name="mkt_cap" type="number" step="any" required><br>
+        <input type="submit" value="Predict">
+    </form>
+    <h2>{{ prediction_text }}</h2>
+</body>
+</html>
